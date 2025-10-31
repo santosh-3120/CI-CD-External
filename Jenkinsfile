@@ -16,14 +16,14 @@ pipeline{
         stage('Building Docker Image'){
             steps{
                 echo 'Creating Docker Image...'
-                sh 'docker build -t Hello'
+                sh 'docker build -t hello'
             }
         }
         stage('Deploy'){
             steps{
                 echo 'Deploying new application in container...'
-                sh 'docker rm -f Hello-container || true'
-                sh 'docker run --name Hello-container Hello'
+                sh 'docker rm -f hello-container || true'
+                sh 'docker run --name hello-container hello'
             }
         }
     }
