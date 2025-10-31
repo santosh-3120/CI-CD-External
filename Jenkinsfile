@@ -16,7 +16,7 @@ pipeline{
         stage('Building Docker Image'){
             steps{
                 echo 'Creating Docker Image...'
-                sh 'docker build -t hello'
+                sh 'docker build -t hello .'
             }
         }
         stage('Deploy'){
